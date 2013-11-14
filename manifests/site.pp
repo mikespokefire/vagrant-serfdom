@@ -16,3 +16,12 @@ node "bravo.example.com" inherits default {
 
 node "charlie.example.com" inherits default {
 }
+
+node "delta.example.com" inherits default {
+}
+
+node "echo.example.com" inherits default {
+}
+
+node "foxtrot.example.com" inherits default {
+}

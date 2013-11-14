@@ -40,4 +40,37 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       puppet.module_path = "modules"
     end
   end
+
+  config.vm.define "delta" do |c|
+    c.vm.hostname = "delta.example.com"
+    c.vm.network "private_network", ip: "192.168.50.40"
+
+    c.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file = "site.pp"
+      puppet.module_path = "modules"
+    end
+  end
+
+  config.vm.define "echo" do |c|
+    c.vm.hostname = "echo.example.com"
+    c.vm.network "private_network", ip: "192.168.50.50"
+
+    c.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file = "site.pp"
+      puppet.module_path = "modules"
+    end
+  end
+
+  config.vm.define "foxtrot" do |c|
+    c.vm.hostname = "foxtrot.example.com"
+    c.vm.network "private_network", ip: "192.168.50.60"
+
+    c.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file = "site.pp"
+      puppet.module_path = "modules"
+    end
+  end
 end
