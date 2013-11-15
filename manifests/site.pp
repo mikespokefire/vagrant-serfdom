@@ -5,6 +5,7 @@ node default {
 
   class { 'apt::update': stage => 'primary'; }
 
+  class { "hosts": }
   class { "serfdom": }
 }
 
